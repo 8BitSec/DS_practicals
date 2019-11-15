@@ -11,12 +11,28 @@
 #define SIZE 50
 using namespace std;
 
-class DiagonalMatrix
+class SparseMatrix
+{
+    public:
+    int ar[SIZE];
+    int n;
+
+    SparseMatrix(){ n = 10; }
+
+    SparseMatrix( int n)
+    {
+        this->n = n;
+    }
+
+    void set();
+    void update(int i, int j, int val);
+    int get(int i, int j);
+};
+
+class DiagonalMatrix: public SparseMatrix
 {
 public:
-    int ar[SIZE];
-	int n;
-
+    
     DiagonalMatrix(int n)
     {
 		this->n = n;
@@ -37,7 +53,7 @@ public:
         }
     }
 
-    void set(int i,int val)
+    void update(int i,int j,int val)
     {
         ar[i]=val;
     }
@@ -48,18 +64,15 @@ public:
     }
 };
 
-class LowerTriangularMatrix
+class LowerTriangularMatrix: public SparseMatrix
 {
-public:
-    int ar[SIZE];
-    int n;
-
+public:   
     LowerTriangularMatrix(int n)
     {
 		this->n = n;
     }
 
-    void set(int i, int j,int val)
+    void update(int i, int j,int val)
     {
         int index = i * (i+1) / 2 + j;
         ar[index]=val;
@@ -90,18 +103,15 @@ public:
     }
 };
 
-class UpperTriangularMatrix
+class UpperTriangularMatrix: public SparseMatrix
 {
 public:
-    int ar[SIZE];
-    int n;
-
     UpperTriangularMatrix(int n)
     {
 		this->n=n;
     }
 
-    void set(int i, int j,int val)
+    void update(int i, int j,int val)
     {
         int index= n*i + j - (i*(i+1)/2);
         ar[index]=val;
@@ -132,18 +142,15 @@ public:
     }
 };
 
-class SymmetricMatrix
+class SymmetricMatrix: public SparseMatrix
 {
 public:
-    int ar[SIZE];
-    int n;
-
     SymmetricMatrix(int n)
     {
 		this->n=n;
     }
 
-    void set(int i, int j,int val)
+    void update(int i, int j,int val)
     {
         int index;
 
@@ -219,7 +226,7 @@ int main()
 
                     cout<<"\nEnter value to be stored: ";
                     cin>>val;
-                    dm.set(i,val);
+                    dm.update(i,j,val);
                     break;
 
                 case 3:
@@ -265,7 +272,7 @@ int main()
 
                     cout<<"\nEnter value to be stored: ";
                     cin>>val;
-                    lm.set(i,j,val);
+                    lm.update(i,j,val);
                     break;
 
                 case 3:
@@ -309,7 +316,7 @@ int main()
 
                     cout<<"\nEnter value to be stored: ";
                     cin>>val;
-                    um.set(i,j,val);
+                    um.update(i,j,val);
                     break;
 
                 case 3:
@@ -353,7 +360,7 @@ int main()
 
                     cout<<"\nEnter value to be stored: ";
                     cin>>val;
-                    sm.set(i,j,val);
+                    sm.update(i,j,val);
                     break;
 
                 case 3:
