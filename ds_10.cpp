@@ -149,23 +149,24 @@ public :
         }
     }//delete_from_tail()
 
-    bool reverse_list()
-    {
-        if( head == NULL)   return false;
-        Node <T> *prev = NULL;
-        Node <T> *current = head;
-        Node <T> *next = NULL;
-
-        while( current != NULL )
-        {
-            next = current -> next;
-            current -> next = prev;
-            prev = current;
-            current = next;
-        }
-        head = prev;
-        return true;
-    }
+    void reverse()
+	{
+		IntSLLNode<t> *temp1 = head;
+		IntSLLNode<t> *temp2 = NULL;
+		IntSLLNode<t> *next = NULL;
+				
+		while(temp1!=NULL)
+		{
+			next = temp1->next;
+			temp1->next = temp2;
+			temp2 = temp1;
+			temp1 = next;
+		}
+		
+		head = temp2;
+		traverse();
+					
+	}
 };//LIST CLASS
 
 
