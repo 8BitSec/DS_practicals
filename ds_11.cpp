@@ -34,6 +34,20 @@ public:
         head = tail = NULL;
     }
 
+    bool search (int element)
+    {
+	Node<T> *temp=head;
+	while(temp!=NULL)
+	{
+		if(temp->info == element)
+		{
+		 return true;
+		 break;
+	    }	    
+		 temp=temp->next;
+	}
+     }
+	
     void add_at_head(T data)
     {
         if( head == NULL )
