@@ -120,6 +120,24 @@ public:
         }        
     }//reverse_traverse()
 
+	bool Palindrome()
+	{
+		DLLNode<t>*temp1=head;
+		DLLNode<t>*temp2=tail;
+		
+		while(temp1!=temp2)
+		{
+			if(temp1->info == temp2->info)
+			{
+				temp1=temp1->next;
+				temp2=temp2->next;
+			}
+			
+			else return false;
+		}
+		
+		return true;
+	}
     int search(T element)
     {
         if( head == NULL )  return -2;

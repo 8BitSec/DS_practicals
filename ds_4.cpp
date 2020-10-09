@@ -91,6 +91,11 @@ class Stack
 			p = temp;
 		}
 	}
+	t top_element()
+	{
+		return L.head->info;
+	}
+	
 };//End of Stack class
 
 int main()
@@ -105,10 +110,11 @@ int main()
     cout << "\nOperations available are :\n";
     cout << "\t1. Add new element [push]\n";
 	cout << "\t2. Delete an element [pop]\n";
-    cout << "\t3. Clear the stack [clear]";
-    cout << "\t4. EXIT";
+    cout << "\t3. Clear the stack [clear]\n";
+    cout<<"\t4. Top Element of stack\n";
+    cout << "\t5. EXIT";
     cout << "\nEnter your choice :";
-    while( !(cin>>choice) || choice<=0 || choice>4 )     printerror("Invalid choice, enter again :");
+    while( !(cin>>choice) || choice<=0 || choice>5 )     printerror("Invalid choice, enter again :");
 
     if( choice == 1 )
 	{
@@ -130,7 +136,12 @@ int main()
 		stack.clear();
 		cout << "\nDone!\n";
 	}
-
+	
+	 else if(choice == 4)
+	 {
+		 cout<<"\nThe Top Element of stack is: ";
+		 stack.top_element();
+	 }
 	else	return 0;
 
 	cout << "\n\n\nPress ENTER to continue ...";
@@ -144,9 +155,7 @@ int main()
 //NEW CODE
 //cpp
 
-#include<bits/stdc++.h>
-using namespace std;
-template <class t>
+t>
 class SLLNode
 {
 public:
