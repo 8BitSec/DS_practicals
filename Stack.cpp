@@ -29,6 +29,12 @@ class Stack
     {
 		return ( top == NULL )? true : false ;
     }
+    
+    t top_element()
+    {
+        return top->info;
+    }
+
 
     void push( T element )      //to push an element in the stack
     {
