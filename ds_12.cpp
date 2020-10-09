@@ -118,6 +118,37 @@ class CLList
 			return true;
 		}		
 	}
+		void del_after_pos(int pos)
+	{
+		if(tail==0)
+		{
+			cout<<"\nList is Empty";	
+		}	
+		
+		else if(tail->next==tail)
+		{
+			delete(tail);
+			tail=0;
+		}
+		
+		else if(tail->next!=tail)
+		{
+			CDLLNode<t> *pre = tail->next;
+			CDLLNode<t> *curt= tail->next;
+			int index = 0;
+			while(1)
+			{
+				index++;
+				if(index==pos+1)
+					break;
+				pre = curt;
+				curt = curt->next;
+			}
+			curt->next->prev=pre;
+			pre->next=curt->next;
+			delete(curt);
+		}
+	}
 
 	bool delete_from_tail()
 	{
