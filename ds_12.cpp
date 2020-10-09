@@ -98,6 +98,20 @@ class CLList
 			return -1;
 		}		
 	}
+	
+	bool search (int element)
+        {
+          Node *temp=tail->next;
+	  while(temp!=tail)
+	  {
+		if(temp->info == element)
+		{
+		 return true;
+		 break;
+	        }	    
+		 temp=temp->next;
+	  }
+        }
 
 	bool delete_from_head()
 	{
