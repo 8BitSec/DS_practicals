@@ -128,7 +128,7 @@ class List
 
 int main(){
 
-	List poly1, poly2, poly_sum;
+	List poly1, poly2, polysum;
 	int coeff,power;
 
 	cout << "\nEnter the first polynomial (enter 0,0 when done):\n\n";
@@ -143,7 +143,7 @@ int main(){
 		if( coeff != 0 )	poly1.add_element(coeff,power);
 	} while( coeff!=0 && power!=0);
 
-	cout << "\nEnter the second polynomial (enter 0,0 when done):\n\n";
+	cout << "\nEnter the second polynomial (enter 0,0 when you're done):\n\n";
 
 	do{
 		cout << "Coefficient = ";
@@ -162,20 +162,20 @@ int main(){
 	{		
 		if( p1->power == p2->power )
 		{
-			poly_sum.add_element( ( p1->coeff + p2->coeff ) , p1->power );
+			polysum.add_element( ( p1->coeff + p2->coeff ) , p1->power );
 			p1 = p1->next;
 			p2 = p2->next;
 		}
 
 		else if ( p1->power < p2->power )
 		{
-			poly_sum.add_element( p1->coeff , p1->power );
+			polysum.add_element( p1->coeff , p1->power );
 			p1 = p1->next;
 		}
 		
 		else if( p1->power > p2->power )
 		{
-			poly_sum.add_element( p2->coeff , p2->power );
+			polysum.add_element( p2->coeff , p2->power );
 			p2 = p2->next;
 		}		
 	}
@@ -184,18 +184,18 @@ int main(){
 	{
 		while( p1 != NULL)
 		{
-			poly_sum.add_element(p1->coeff,p1->power);
+			polysum.add_element(p1->coeff,p1->power);
 			p1 = p1->next;
 		}
 		while(p2 != NULL )
 		{
-			poly_sum.add_element(p2->coeff,p2->power);
+			polysum.add_element(p2->coeff,p2->power);
 			p2 = p2->next;
 		}
 	}
 
 	cout << "\n\nThe final polynomial is:\n\n";
-	poly_sum.print();
+	polysum.print();
 	cout << endl;
 	return 0;
 }
