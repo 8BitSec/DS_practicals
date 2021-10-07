@@ -118,13 +118,13 @@ int main()
 	while(true)
 	{
 		system("clear");
-		cout << "\n<----- QUEUE USING LINKED LIST ----->";
+		cout << "\n\t\t<----- QUEUE USING LINKED LIST ----->";
 
-		cout << "\n\nOperations available on queue:\n";
-		cout << "\t1. Add an element    [enque]\n";
-		cout << "\t2. Remove an element [deque]\n";
-		cout << "\t3. Print the queue\n";
-		cout << "\t4. EXIT\n";
+		cout << "\n\n\tOperations available on queue:\n";
+		cout << "\t\t1. Add an element    [enque]\n";
+		cout << "\t\t2. Remove an element [deque]\n";
+		cout << "\t\t3. Print the queue\n";
+		cout << "\t\t4. EXIT\n";
 		cout << "\nEnter your choice :";
 
 		while( !(cin>>choice) || choice < 0 || choice > 4 )  printerror("Invalid choice, enter again: ");
