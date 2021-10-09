@@ -189,9 +189,11 @@ void DLList:: add_element(int data)
 
 int DLList:: search(int element)
 {
-	if( head == NULL )	return -2;
+	if( head == NULL )	
+		return -2;
 
-	else if( element < head->info || element > tail->info )	return -1;
+	else if( element < head->info || element > tail->info )	
+		return -1;
 
 	else
 	{
@@ -199,7 +201,8 @@ int DLList:: search(int element)
 		
 		while( temp != NULL && temp->info <= element )
 		{
-			if( temp->info == element )		return 0;
+			if( temp->info == element )		
+				return 0;
 			temp = temp->next;
 		}		
 		return -1;
