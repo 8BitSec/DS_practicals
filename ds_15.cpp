@@ -9,7 +9,7 @@
 		g) Create a mirror image of the tree
 */
 
-#include<iostream>
+#include<bits/stdc++.h>
 #include<cstdlib>		//for system()
 #include<cstdio>		//for getchar()
 #include "Stack.cpp"
